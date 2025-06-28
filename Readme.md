@@ -220,27 +220,27 @@
 
 <h3>ループの中身</h3>
 
-    - const itemText = item.textContent.toLowerCase();:
+- const itemText = item.textContent.toLowerCase();:
 
-      - 現在のリスト項目（item）のテキスト内容（textContent）を取得し、それを小文字に変換して itemText に格納します。
+- 現在のリスト項目（item）のテキスト内容（textContent）を取得し、それを小文字に変換して itemText に格納します。
 
-    - if (itemText.includes(filterText)) { ... } else { ... }:
+- if (itemText.includes(filterText)) { ... } else { ... }:
 
-      - itemText.includes(filterText): リスト項目のテキスト（itemText）が、ユーザーが入力したキーワード（filterText）を含んでいるかどうかをチェックします。true であれば含まれている、false であれば含まれていません。
+- itemText.includes(filterText): リスト項目のテキスト（itemText）が、ユーザーが入力したキーワード（filterText）を含んでいるかどうかをチェックします。true であれば含まれている、false であれば含まれていません。
 
-      - キーワードが含まれている場合 (if ブロック):
+- キーワードが含まれている場合 (if ブロック):
 
-        - item.classList.remove("hidden");: hidden クラスを削除します。これにより、CSS で設定された非表示のスタイル（透明度 0、高さ 0 など）が解除され、項目が表示されます。
+- item.classList.remove("hidden");: hidden クラスを削除します。これにより、CSS で設定された非表示のスタイル（透明度 0、高さ 0 など）が解除され、項目が表示されます。
 
-        - item.style.display = "block";: アニメーション（transition）が正しく適用されるように、明示的に display プロパティを block に設定します。
+- item.style.display = "block";: アニメーション（transition）が正しく適用されるように、明示的に display プロパティを block に設定します。
 
-      - キーワードが含まれていない場合 (else ブロック):
+- キーワードが含まれていない場合 (else ブロック):
 
-        - item.classList.add("hidden");: hidden クラスを追加します。これにより、CSS で設定された非表示のスタイルが適用され、項目がゆっくりと消えていきます。
+- item.classList.add("hidden");: hidden クラスを追加します。これにより、CSS で設定された非表示のスタイルが適用され、項目がゆっくりと消えていきます。
 
-        - item.addEventListener("transitionend", function handler() { ... });:
+- item.addEventListener("transitionend", function handler() { ... });:
 
-          - これは少し高度な部分です。CSS の transition（アニメーション）が完全に終了したときに実行されるイベントリスナーを設定しています。
+- これは少し高度な部分です。CSS の transition（アニメーション）が完全に終了したときに実行されるイベントリスナーを設定しています。
 
 - if (item.classList.contains("hidden")) { item.style.display = "none"; }: もし hidden クラスがまだ付いている（つまり、非表示になった状態が続いている）なら、完全に display: none;を設定します。
 
